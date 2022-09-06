@@ -1,9 +1,4 @@
-const options = {
-    headers: {
-      'X-RapidAPI-Key': 'bb95675774mshe180056b6129759p10f897jsn383fb618d19b',
-      'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
-    }
-  };
+import {API_KEY} from "./config.js" 
   
 const mainPage = document.getElementById('main')
 const divTag = document.getElementById('logout')
@@ -17,7 +12,6 @@ function selectedDrink(category) {
        
       data.drinks.forEach((categories) => {
       moreInfo(categories)
-      //document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')"
 
     })
      document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')"
@@ -25,6 +19,13 @@ function selectedDrink(category) {
 let drinks;
 function populateDrinks() {
     mainPage.innerHTML = ''
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': API_KEY,
+        'X-RapidAPI-Host': 'the-cocktail-db.p.rapidapi.com'
+      }
+    };
     fetch('https://the-cocktail-db.p.rapidapi.com/popular.php', options)
     .then(res => res.json())
     .then(data => {
