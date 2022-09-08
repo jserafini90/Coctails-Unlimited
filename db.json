@@ -1,25 +1,25 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "username": "Jessica",
-        "password": "Keith"
-      },
-      {
-        "username": "Liam",
-        "password": "Jameson",
-        "id": 2
-      },
-      {
-        "username": "Jameson",
-        "password": "Liam",
-        "id": 3
-      },
-      {
-        "username": "Brad",
-        "password": "Kathy",
-        "id": 4
-      }
- 
-    ]
-  }
+  "users": [
+    {
+      "id": 1,
+      "username": "Jessica",
+      "password": "Keith"
+    },
+    {
+      "username": "Liam",
+      "password": "Jameson",
+      "id": 2
+    },
+    {
+      "username": "Jameson",
+      "password": "Liam",
+      "id": 3
+    },
+    {
+      "username": "Brad",
+      "password": "Kathy",
+      "id": 4
+    }
+
+  ]
+}

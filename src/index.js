@@ -50,10 +50,22 @@ function populateDrinks() {
     mainPage.appendChild(aTag)
     aTag.addEventListener('click', (e) => {
       moreInfo(drink)
-      console.log(drink)
-     })
+   
+   })
 
-  }
+   aTag.addEventListener("mouseover", (e) => {
+    e.target.style.color = "orange";
+  
+    setTimeout(() => {
+      e.target.style.color = "";
+    }, 500);
+  }, false);
+
+}
+
+     
+    
+    
 
 function moreInfo(info) {
     mainPage.innerHTML = ''
@@ -89,6 +101,10 @@ function moreInfo(info) {
     mainPage.append(singleTile)
 
   }
+
+//  function changeColor() {
+//    let text = document.getElementById('h2').event.target.style.color = "orange";
+// };
 
 function loginPage(){
     mainPage.innerHTML = ''
