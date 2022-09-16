@@ -102,9 +102,6 @@ function moreInfo(info) {
 
   }
 
-//  function changeColor() {
-//    let text = document.getElementById('h2').event.target.style.color = "orange";
-// };
 
 function loginPage(){
     mainPage.innerHTML = ''
@@ -124,7 +121,8 @@ function loginPage(){
     document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1609951651556-5334e2706168?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80')"
     mainPage.append(loginForm)
     loginForm.addEventListener('submit',(e) => { 
-        userLogin()
+      //console.log(e)
+        userLogin(e)
         populateDrinks()
     }
     )}
@@ -166,7 +164,8 @@ function signUp(){
     })
   }  
   
-function userLogin(e){
+const userLogin = (e) => {
+  console.log(e)
     e.preventDefault()
     const username = e.target.children[2].value
     const password = e.target.children[5].value
@@ -174,10 +173,11 @@ function userLogin(e){
     fetch(`http://localhost:3000/users?name=${username}&password=${password}`)
     .then(res => res.json())
     .then(data => {
+      console.log(data)
         if(data.length === 0){
             alert('Incorrect Username or Password')
         } else {
-            popularDrink()
+            populateDrinks()
         }
     })
   }

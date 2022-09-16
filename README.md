@@ -5,9 +5,14 @@ Cocktails Unlimited is a app that lists the top 20 most popular drinks. You can 
 Installation
 Fork and clone repo into your local environment. Navigate to directory of cloned repo.
 
+
+Open with Live Server in index.html
+
 npm install -g json-server 
 
 Open index.html
 
 json-server --watch db.json
+
+
 # Coctails-Unlimited
